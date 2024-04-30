@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Navbar() {
     return (
         <>
@@ -11,6 +13,9 @@ export default function Navbar() {
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <Link to="/about" className="nav-link">關於</Link>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
