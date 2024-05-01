@@ -20,6 +20,9 @@ export default function Navbar() {
                   <li className="nav-item">
                     <Link to="/album" className="nav-link">相簿</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link to="/album/search" className="nav-link">搜尋</Link>
+                  </li>
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Dropdown
@@ -30,9 +33,6 @@ export default function Navbar() {
                       <li><hr className="dropdown-divider" /></li>
                       <li><a className="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                   </li>
                 </ul>
               </div>
