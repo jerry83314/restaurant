@@ -1,5 +1,16 @@
+import { useOutletContext } from "react-router-dom";
+
 export default function AlbumIndex() {
-  return (<>
-    這是相簿首頁
-  </>)
+  const list = useOutletContext();
+  return (
+    <>
+      {list.map((item) => {
+        return (
+          <li key={item.id}>
+            {item.id}
+          </li>
+        );
+      })}
+    </>
+  );
 }

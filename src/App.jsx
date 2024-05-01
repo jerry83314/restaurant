@@ -10,8 +10,6 @@ import AlbumIndex from './pages/AlbumIndex'
 import AlbumPhoto from './pages/AlbumPhoto'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Navbar/>
@@ -20,7 +18,7 @@ function App() {
           <Route path="/about" element={<About/>}></Route>
           <Route path="/album" element={<AlbumLayout/>}>
             <Route index element={<AlbumIndex/>}></Route>
-            <Route path="photo" element={<AlbumPhoto/>}></Route>
+            <Route path=":id" element={<AlbumPhoto/>}></Route>
           </Route>
         </Routes>
       </div>
