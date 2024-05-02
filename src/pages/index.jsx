@@ -5,6 +5,7 @@ import AlbumLayout from "./AlbumLayout";
 import AlbumPhoto from "./AlbumPhoto";
 import AlbumSearch from "./AlbumSearch";
 import NotFound from "./NotFound";
+import UseMemo from "./reactClass/UseMemo";
 
 export { 
   Home,
@@ -13,5 +14,6 @@ export {
   AlbumLayout,
   AlbumPhoto,
   AlbumSearch,
-  NotFound
+  NotFound,
+  UseMemo
 }
