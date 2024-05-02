@@ -14,7 +14,7 @@ export default function Navbar() {
                   <li className="nav-item">
                     <NavLink to="/about" className="nav-link" style={({ isActive }) => {
                       return ({
-                        color: isActive ? 'red': ''
+                        color: isActive ? 'red': '' 
                       })
                     }}>關於</NavLink>
                   </li>

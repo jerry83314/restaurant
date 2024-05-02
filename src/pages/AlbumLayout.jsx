@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import List from '../assets/components/List'
 
 const api = "https://api.unsplash.com/search/photos";
 const accessId = import.meta.env.VITE_UNSPLASH_ACCESS;
@@ -20,9 +21,7 @@ export default function AlbumLayout() {
     <>
       <div className="row">
         <div className="col-md-4">
-          {list.map((item) => {
-            return <li key={item.id}><Link to={item.id}>{item.id}</Link></li>
-          })}
+          <List list={list} />
         </div>
         <div className="col-md-8">
           <Outlet context={list}/>
