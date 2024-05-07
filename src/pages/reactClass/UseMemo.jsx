@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react"
+import { useMemo, useState, useEffect, useCallback } from "react"
 import DataTable from "./components/DataTable";
 
 export default function UseMemo() {
@@ -44,6 +44,17 @@ export default function UseMemo() {
   const [ascending, setAscending] = useState(true);
   const [search, setSearch] = useState('');
   const [text, setText] = useState('');
+  const [items, setItems] = useState([]);
+
+  const handleClick = useCallback((e) => {
+    console.log('handleClick 被觸發了');
+    // 確認是否被勾選
+    if(e.target.checked) {
+      setItems([...items, e.target.value]);
+    } else {
+      setItems(items.filter((item) => item !== e.target.value ))
+    }
+  }, [items]);
 
   const filterProducts = useMemo(() => {
     // // 搜尋功能
@@ -66,6 +77,7 @@ export default function UseMemo() {
       <input type="text" value={text} onChange={(e) => {
         setText(e.target.value)
       }} />
+      <br/>
       升降冪：<input type="checkbox" checked={ascending} onChange={(e) => {
         setAscending(e.target.checked)
       }}/>
@@ -73,7 +85,8 @@ export default function UseMemo() {
       搜尋：<input type="text" value={search} onChange={(e) => {
         setSearch(e.target.value)
       }} />
-      <DataTable filterProducts={filterProducts} />
+      <p>勾選的項目：{items}</p>
+      <DataTable filterProducts={filterProducts} handleClick={handleClick} />
     </>
   )
 }
