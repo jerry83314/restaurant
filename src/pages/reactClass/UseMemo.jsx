@@ -1,4 +1,6 @@
 import { useMemo, useState, useEffect } from "react"
+import DataTable from "./components/DataTable";
+
 export default function UseMemo() {
   const sampleData = [
     {
@@ -41,6 +43,7 @@ export default function UseMemo() {
   const [products, setProducts] = useState(sampleData);
   const [ascending, setAscending] = useState(true);
   const [search, setSearch] = useState('');
+  const [text, setText] = useState('');
 
   const filterProducts = useMemo(() => {
     // // 搜尋功能
@@ -60,6 +63,9 @@ export default function UseMemo() {
   return (
     <>
       <p>這是 useMemo hook 頁面 </p>
+      <input type="text" value={text} onChange={(e) => {
+        setText(e.target.value)
+      }} />
       升降冪：<input type="checkbox" checked={ascending} onChange={(e) => {
         setAscending(e.target.checked)
       }}/>
@@ -67,18 +73,7 @@ export default function UseMemo() {
       搜尋：<input type="text" value={search} onChange={(e) => {
         setSearch(e.target.value)
       }} />
-      <table className="table">
-        <tbody>
-          {filterProducts.map((product) => {
-            return (
-                <tr key={product.id}>
-                  <td>{product.title}</td>
-                  <td>{product.price}</td>
-                </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <DataTable filterProducts={filterProducts} />
     </>
   )
 }
