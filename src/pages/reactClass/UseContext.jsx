@@ -5,14 +5,13 @@ import UserContext from "../../context/userContext";
 
 export default function UseContext() {
   const [username, Setusername] = useState('');
+  const [isLogin, setIsLogin] = useState(false);
 
   return(
     <>
-      <UserContext.Provider value={{username, Setusername}}>
+      <UserContext.Provider value={{username, Setusername, setIsLogin}}>
       <p>這是 useContext 頁面</p>
-      <LoginForm/>
-      <hr />
-      <Greeting/>
+      { isLogin ? <Greeting/> : <LoginForm/> }
       </UserContext.Provider>
     </>
   )
