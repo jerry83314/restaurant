@@ -30,6 +30,9 @@ export default function Navbar() {
                   <li className="nav-item">
                     <NavLink to="/customhook" className="nav-link">自定義 hook</NavLink>
                   </li>
+                  <li className="nav-item">
+                    <NavLink to="/usecontext" className="nav-link">useContext hook</NavLink>
+                  </li>
                 </ul>
               </div>
             </div>
