@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import Navbar from './assets/components/Navbar'
 import { Route, Routes, Outlet } from 'react-router-dom'
-import { Home, About, AlbumLayout, AlbumIndex, AlbumPhoto, AlbumSearch, NotFound, UseMemo } from './pages'
+import { Home, About, AlbumLayout, AlbumIndex, AlbumPhoto, AlbumSearch, NotFound, UseMemo, CustomHook } from './pages'
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path=":id" element={<AlbumPhoto/>}></Route>
           </Route>
           <Route path="/usememo" element={<UseMemo/>}></Route>
+          <Route path="/customhook" element={<CustomHook/>}></Route>
           <Route path="*" element={<NotFound/>}></Route>
         </Routes>
       </div>

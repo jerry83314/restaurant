@@ -6,6 +6,7 @@ import AlbumPhoto from "./AlbumPhoto";
 import AlbumSearch from "./AlbumSearch";
 import NotFound from "./NotFound";
 import UseMemo from "./reactClass/UseMemo";
+import CustomHook from "./reactClass/CustomHook";
 
 export { 
   Home,
@@ -15,5 +16,6 @@ export {
   AlbumPhoto,
   AlbumSearch,
   NotFound,
-  UseMemo
+  UseMemo,
+  CustomHook
 }
